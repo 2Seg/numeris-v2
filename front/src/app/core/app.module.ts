@@ -25,6 +25,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { Router } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../../environments/environment';
+import { ManagementModule } from '../modules/management/management.module';
 
 // Setting to locale to 'fr'
 registerLocaleData(localeFr, 'fr');
@@ -43,6 +44,7 @@ registerLocaleData(localeFr, 'fr');
     StudentModule,
     StaffModule,
     SharedModule,
+    ManagementModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
@@ -70,6 +72,6 @@ export class AppModule {
 
   constructor(private router: Router) {
     // Uncomment the following line to display the router configuration (useful to see if the routes are in the proper order)
-    // console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }

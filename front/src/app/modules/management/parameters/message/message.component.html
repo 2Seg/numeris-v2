@@ -1,0 +1,22 @@
+<!-- A ignorer pour l'instant -->
+
+<div class="ui segment overflowing">
+  <table class="ui celled striped selectable table">
+    <thead>
+    <tr>
+      <th class="collapsing"><i class="thumbtack icon"></i> Message Actuel</th>
+      <th class="collapsing"><i class="mail alternate icon"></i> Anciens Messages</th>
+    </tr>
+    <tr>
+        <td>
+          <div *ngIf="message.is_active === true"></div>
+          {{message.content}}
+        </td>
+        <td>
+          <div *ngIf="message.is_active === false"></div>
+          {{message.content}}
+        </td>
+    </tr>
+    </thead>
+  </table>
+</div>
