@@ -7,14 +7,18 @@
       <th class="collapsing"><i class="thumbtack icon"></i> Message Actuel</th>
       <th class="collapsing"><i class="mail alternate icon"></i> Anciens Messages</th>
     </tr>
-    <tr>
-        <td>
-          <div *ngIf="message.is_active === true"></div>
-          {{message.content}}
+    <tr  *ngFor="let message of messages">
+        <td *ngIf="currentmessage.length > 0 ; else elseBlock">
+          {{currentmessage.title}}
         </td>
         <td>
-          <div *ngIf="message.is_active === false"></div>
-          {{message.content}}
+          <ng-template #elseBlock>
+            No current message
+          </ng-template>
+        </td>
+        <td>
+          <b>Title :</b>{{message.title}}<br>
+          <b>Content :</b>{{message.content}}<br>
         </td>
     </tr>
     </thead>
