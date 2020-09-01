@@ -1,0 +1,19 @@
+<app-content [condition]="!true">
+  <div class="ui padded grid">
+    <div class="column">
+      <sui-tabset>
+
+        <div class="ui top pointing secondary menu">
+          <a class="item" suiTabHeader="1">
+            <i class="mail icon"></i> Message
+          </a>
+        </div>
+
+        <div class="ui" suiTabContent="1">
+          <app-message></app-message>
+        </div>
+
+      </sui-tabset>
+    </div>
+  </div>
+</app-content>
