@@ -1,26 +1,37 @@
-<!-- A ignorer pour l'instant -->
-
-<div class="ui segment overflowing">
-  <table class="ui celled striped selectable table">
-    <thead>
-    <tr>
-      <th class="collapsing"><i class="thumbtack icon"></i> Message Actuel</th>
-      <th class="collapsing"><i class="mail alternate icon"></i> Anciens Messages</th>
-    </tr>
-    <tr  *ngFor="let message of messages">
-        <td *ngIf="currentmessage.length > 0 ; else elseBlock">
-          {{currentmessage.title}}
-        </td>
-        <td>
-          <ng-template #elseBlock>
-            No current message
-          </ng-template>
-        </td>
-        <td>
-          <b>Title :</b>{{message.title}}<br>
-          <b>Content :</b>{{message.content}}<br>
-        </td>
-    </tr>
-    </thead>
-  </table>
-</div>
+<table class="ui celled striped selectable table">
+  <thead>
+  <tr>
+    <th class="collapsing"><i class="thumbtack icon"></i> Message Actuel</th>
+    <th class="collapsing"><i class="mail alternate icon"></i> Anciens Messages</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td *ngIf="currentmessage.title.length > 0 ; else elseBlock">
+      <b>Title : </b>{{currentmessage.title}}<br>
+      <b>Content : </b>{{currentmessage.content}}<br>
+      <div *ngIf= "currentmessage.link.length > 0"><b>Link : </b>{{currentmessage.link}}<br></div>
+      <br />
+      <button  type="button" name="activation"><span>&#10003;</span></button>
+      <button type="button" name="deactivate"><span>&#10005;</span></button>
+      <button type="button" name="modify"><span>&#9998;</span></button>
+    </td>
+    <ng-template #elseBlock>
+      <td>
+        No current message
+      </td>
+    </ng-template>
+    <ng-container *ngFor="let message of messages">
+        <tr>
+        <b>Title : </b>{{message.title}}<br>
+        <b>Content : </b>{{message.content}}<br>
+        <div *ngIf= "message.link.length > 0"><b>Link : </b>{{message.link}}<br></div>
+        <br />
+        <button type="button" name="activation"><span>&#10003;</span></button>
+        <button type="button" name="deactivate"><span>&#10005;</span></button>
+        <button type="button" name="modify"><span>&#9998;</span></button>
+        </tr>
+    </ng-container>
+  </tr>
+  </tbody>
+</table>

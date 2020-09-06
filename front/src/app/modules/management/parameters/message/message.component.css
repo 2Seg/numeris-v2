@@ -1,0 +1,9 @@
+button[name="activation"] {
+  color: green;
+}
+button[name="deactivate"] {
+  color: red;
+}
+button[name="modify"] {
+  color: black;
+}

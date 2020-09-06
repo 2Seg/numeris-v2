@@ -13,9 +13,9 @@ export class MessageService {
 
   constructor(private http: HttpClient) { }
 
-  getMessages(): Observable<PaginatedMessage[]> {
+  getMessages(): Observable<Message[]> {
     const url = `${environment.apiUrl}/api/messages`;
-    return this.http.get<PaginatedMessage[]>(url, HTTP_OPTIONS);
+    return this.http.get<Message[]>(url, HTTP_OPTIONS);
   }
 
   getCurrentMessage(): Observable<Message> {
