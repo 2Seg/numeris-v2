@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::permanentRedirect('', env('FRONT_APP_URL'));
 Auth::routes();
 
@@ -128,3 +129,4 @@ Route::group(['middleware' => 'auth:api'], function () {
 
 // Payslip resource routes
 Route::put('payslips-podium', 'PayslipController@indexPodium')->name('payslips.podium.index');
+
